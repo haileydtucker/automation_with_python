@@ -14,14 +14,20 @@ import pandas as pd
 
 ###### Reading in the file and turning to a dataframe ###### 
 
-# dynamically reading in system line 
-sys_string = sys.argv 
-print ("This is the system string passed:", sys_string)
-input_file = ''
-input_file = str(sys_string[1])
-output_file = str(sys_string[2])
-target_column = str(sys_string[3])
-target_value = str(sys_string[4])
+# dynamically reading in system line- used for calling python script in Jenkins testing pipeline built with Perl
+# sys_string = sys.argv 
+# print ("This is the system string passed:", sys_string)
+# input_file = ''
+# input_file = str(sys_string[1])
+# output_file = str(sys_string[2])
+# target_column = str(sys_string[3])
+# target_value = str(sys_string[4])
+
+# hard-coding variables
+input_file = 'manual_entries_temp.xlsx'
+output_file = 'manual_entries_temp_new.xlsx'
+target_column = 'POSTING_AMT'
+target_value = 150 
 
 # Reading in the file 
 theFile = openpyxl.load_workbook(input_file)
