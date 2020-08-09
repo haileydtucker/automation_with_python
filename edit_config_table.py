@@ -12,22 +12,26 @@ import string
 
 # file_location = "C:/Users/hatuck/Documents/PythonScripts/run_option.sas" # hard-coded location
 
-import sys
-sys_string = sys.argv
-file_location = ''
-print ("This is the system string passed:", sys_string)
-file_location = str(sys_string[1])
+# Using system line if calling python script in Perl testing pipeline
+# import sys
+# sys_string = sys.argv
+# file_location = ''
+# print ("This is the system string passed:", sys_string)
+# file_location = str(sys_string[1])
 
-to_check = sys_string[2] # This is the dictionary of element checks to change lines 
-print ("This is the dictionary that was passed in:", to_check)
-#to_check = to_check.replace('//', '')
-#to_check = to_check.replace('\\', '') #
-#print ("This is the dictionary post strip of // and \\", to_check)
-to_check = eval(to_check) #checking if it is a dictionary format
-#print ("This is the eval of dict", to_check)
-import ast
-to_check = ast.literal_eval(to_check)
-#print ("This is the ast dictionary", to_check)
+# to_check = sys_string[2] # This is the dictionary of element checks to change lines 
+# print ("This is the dictionary that was passed in:", to_check)
+# #to_check = to_check.replace('//', '')
+# #to_check = to_check.replace('\\', '') #
+# #print ("This is the dictionary post strip of // and \\", to_check)
+# to_check = eval(to_check) #checking if it is a dictionary format
+# #print ("This is the eval of dict", to_check)
+# import ast
+# to_check = ast.literal_eval(to_check)
+# #print ("This is the ast dictionary", to_check)
+
+# hard - coded
+file_location = 'manual_entries_temp.xlsx' 
 
 # Reading in a file. 
 with open (file_location) as f: 
@@ -39,8 +43,7 @@ lines = [x.strip() for x in lines]
 # make to_check able to be passed in 
 
 # Creating list for things to check for: (hard-coded)
-# to_check = {"CURRENCY_DECIMAL_ROUNDING_FLG" : "Y","ALIGNMENT_LOGIC_FLG": "Y","ALIGNMENT_THRESHOLD_NO" : 100,"DERECOGNITION_LOGIC_FLG" : "Y"}
-# to_check
+ to_check = {"CURRENCY_DECIMAL_ROUNDING_FLG" : "Y","ALIGNMENT_LOGIC_FLG": "Y","ALIGNMENT_THRESHOLD_NO" : 100,"DERECOGNITION_LOGIC_FLG" : "Y"}
 
 # Python program to convert a list to string 
     
