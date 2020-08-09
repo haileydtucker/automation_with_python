@@ -31,7 +31,7 @@ import string
 # #print ("This is the ast dictionary", to_check)
 
 # hard - coded
-file_location = 'manual_entries_temp.xlsx' 
+file_location = 'run_option.sas' 
 
 # Reading in a file. 
 with open (file_location) as f: 
